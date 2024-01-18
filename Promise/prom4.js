@@ -9,7 +9,8 @@ function fetchDataFromAPI(success){
         setTimeout(() => {
         const success = Math.random() * 0.5;
         if(success < 0.5){
-                resolve(`data retrieved ${success}`)
+                resolve (`data retrieved 
+            ${success}`)
             } else reject(new Error("Failed to fetch data"))
     })
         }, 1000)
@@ -20,4 +21,4 @@ function fetchDataFromAPI(success){
 
 fetchDataFromAPI()
 .then((success) => { console.log('Valore casuale di success:', success)})
-.catch((errore)=> console.log(error))
+.catch((errore)=> console.error(error.message))
