@@ -1,0 +1,41 @@
+
+    /*Una promise non è altro che un oggetto creato dalla
+    constructor function Promise per la gestione del codice
+    asincrono. resolve e rejected sono due funzioni, resolve
+    corrisponde a then, reject a catch.*/
+    function azione(tipo){
+        return new Promise((resolve,reject) => {
+            let marmellataPortata = true;
+            if(marmellataPortata === true){
+              resolve(`Azione ${tipo} risolta`);//resolve corrisponde a then
+            }else{
+              reject(`Azione ${tipo} rifiutata`);//reject corrisponde a catch
+            }
+  
+      });
+    }
+    const obiettivo = azione('Portare marmellata');
+    obbiettivo.then((risp) => {
+          console.log(risp);
+          return azione('Fare la crostata');
+          /*--Dato che la funzione azione ritorna una promise
+          possiamo invocare then in successione per altre azioni.*/
+    }).then((risp) => {
+        console.log(risp);
+        return azione('Portare a nostra madre');
+    }).then((risp) => {
+        console.log(risp);
+    })
+    .catch((err) => {
+          console.log(err);
+    });
+    //Invochiamo then perchè sole se l'amico ci porta la
+    //marmellata allora possiamo fare la crostata. resolve
+    //corrisponde a then catch a reject. Adesso vogliamo
+    //concatenare altre azioni, abbiamo ricevuto la
+    //marmellata ma ancora la dobbiamo fare.
+
+    /*--Abbiamo gestito con le promise il susseguirsi di
+    una serie di azioni, e l'azione successiva può essere
+    intrapresa solo se la precedente è andata a buon fine.*/
+  
