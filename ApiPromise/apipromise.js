@@ -62,7 +62,7 @@
 //       }
 //     },2000)
 //     })
-//   } -->
+// //   } -->
 const persons = [
   {
     id: 1,
@@ -110,3 +110,5 @@ fetchPersonById(1)
 .then((person) => fetchJobById(person)
 .then((jobTitle)=> console.log(`${person.firstName} ${person.lastName} ${jobs.person}`)))
 .catch((errore)=> console.error(new Error('errore')));
+
+
